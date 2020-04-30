@@ -21,7 +21,7 @@
 <h1>
 	Hello world!  
 </h1>
-
+<P>  ID is ${ID}. </P>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
