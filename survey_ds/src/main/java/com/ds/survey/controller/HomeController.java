@@ -1,4 +1,4 @@
-package com.ds.survey;
+package com.ds.survey.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -13,13 +13,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ds.survey.dao.HomeDao;
+import com.ds.survey.svc.HomeService;
+import com.ds.survey.vo.HomeVo;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
 	@Autowired
-	HomeDao homeDao;
+	HomeService homeService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -37,7 +41,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		List<HomeDto> list = homeDao.sel();
+		List<HomeVo> list = homeService.selectList();
 		for(int i=0; i<list.size(); i++){
 			logger.info(list.get(i).getAccount_idx());
 			logger.info(list.get(i).getId());

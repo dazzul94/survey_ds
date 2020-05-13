@@ -1,6 +1,6 @@
-package com.ds.survey;
+package com.ds.survey.vo;
 
-public class HomeDto {
+public class HomeVo {
 
 	private String account_idx;
 	private String id;
